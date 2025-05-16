@@ -1,0 +1,11 @@
+<div>
+<%= form_for :tax_calculator, url: "/calculate_tax", method: :post  do |form| %>
+  <%= form.label :earnings, "Earnings" %>
+  <%= form.number_field :earnings, step: 0.01 %>
+
+  <%= form.label :country_code, "Location" %>
+  <%= form.select(:country_code, supported_currencies) %>
+
+  <%= form.submit "Calculate" %>
+<% end %>
+</div>
